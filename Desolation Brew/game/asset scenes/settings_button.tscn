@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://dsy2woc2e8lax"]
+
+[ext_resource type="FontFile" uid="uid://nhrer1v18pou" path="res://assets/fonts/TheConfessionFullRegular-8qGz.ttf" id="1_38o8x"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_r0hc2"]
+bg_color = Color(0, 0, 0, 0.670588)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2wrsg"]
+bg_color = Color(0, 0, 0, 0.945098)
+
+[node name="SettingsButton" type="Button"]
+offset_left = 407.0
+offset_top = 290.0
+offset_right = 775.0
+offset_bottom = 338.0
+theme_override_fonts/font = ExtResource("1_38o8x")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_r0hc2")
+theme_override_styles/hover = SubResource("StyleBoxFlat_2wrsg")
+text = "Settings"

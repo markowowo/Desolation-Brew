@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dm0it3kjo1v07"
+path="res://.godot/imported/paper-rustle-81855.mp3-a5d17908e9ce7562670eccf90b8af10c.mp3str"
+
+[deps]
+
+source_file="res://assets/sound/sfx/misc sfx/paper-rustle-81855.mp3"
+dest_files=["res://.godot/imported/paper-rustle-81855.mp3-a5d17908e9ce7562670eccf90b8af10c.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

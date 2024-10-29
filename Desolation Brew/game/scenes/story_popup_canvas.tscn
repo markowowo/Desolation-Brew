@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://b6ybsx6hqcntj"]
+
+[ext_resource type="Script" path="res://game/scripts/StoryPopupCanvas.gd" id="1_evnsx"]
+
+[node name="StoryPopupCanvas" type="CanvasLayer"]
+script = ExtResource("1_evnsx")

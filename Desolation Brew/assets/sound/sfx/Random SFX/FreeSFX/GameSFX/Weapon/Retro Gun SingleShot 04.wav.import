@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bgbfl50xmx2ho"
+path="res://.godot/imported/Retro Gun SingleShot 04.wav-36df4038a81a3a2fed417f3420f7a232.sample"
+
+[deps]
+
+source_file="res://assets/sound/sfx/Random SFX/FreeSFX/GameSFX/Weapon/Retro Gun SingleShot 04.wav"
+dest_files=["res://.godot/imported/Retro Gun SingleShot 04.wav-36df4038a81a3a2fed417f3420f7a232.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

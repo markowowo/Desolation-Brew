@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://cyjfhlljggecq"]
+
+[ext_resource type="FontFile" uid="uid://nhrer1v18pou" path="res://assets/fonts/TheConfessionFullRegular-8qGz.ttf" id="1_qjmho"]
+
+[node name="MarkoCredits" type="Label"]
+offset_left = 46.0
+offset_top = 115.0
+offset_right = 746.0
+offset_bottom = 238.0
+theme_override_constants/outline_size = 0
+theme_override_fonts/font = ExtResource("1_qjmho")
+theme_override_font_sizes/font_size = 60
+text = "Developer, Game Designer, UI/UX Designer - Marko"
+autowrap_mode = 2

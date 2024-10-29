@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://cd4xf6pxk77w3"]
+
+[ext_resource type="AudioStream" uid="uid://bfhumxveri0rj" path="res://assets/sound/music/Clement Panchout _ Revenge.wav" id="1_kinkc"]
+[ext_resource type="Script" path="res://game/scripts/main_menu_theme.gd" id="2_twwvu"]
+
+[node name="MainMenuTheme" type="AudioStreamPlayer"]
+stream = ExtResource("1_kinkc")
+autoplay = true
+bus = &"Music"
+script = ExtResource("2_twwvu")

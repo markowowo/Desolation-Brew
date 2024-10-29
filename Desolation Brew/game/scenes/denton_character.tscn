@@ -1,0 +1,190 @@
+[gd_scene load_steps=22 format=3 uid="uid://dipc7vx3he22x"]
+
+[ext_resource type="Texture2D" uid="uid://6wlh3s0dbrhr" path="res://assets/tilesets/Tech Dungeon Tileset/NPC/npc x1.png" id="1_c2lqw"]
+[ext_resource type="Script" path="res://game/scripts/denton_character.gd" id="1_hlt1e"]
+[ext_resource type="PackedScene" uid="uid://bj8153yfngurt" path="res://game/scenes/dialogue_popup_canvas.tscn" id="3_2mtun"]
+[ext_resource type="FontFile" uid="uid://bgfw6vk705sj5" path="res://assets/fonts/Teko-Regular.ttf" id="3_quuxm"]
+[ext_resource type="Texture2D" uid="uid://dii5et15qne10" path="res://assets/sprites/misc/e to interact.png" id="4_0vpcy"]
+[ext_resource type="Texture2D" uid="uid://dx7ih7bpdloyd" path="res://assets/sprites/misc/white.png" id="6_iwysd"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bdhic"]
+atlas = ExtResource("1_c2lqw")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pcjmm"]
+atlas = ExtResource("1_c2lqw")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_32qmr"]
+atlas = ExtResource("1_c2lqw")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vfmo2"]
+atlas = ExtResource("1_c2lqw")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_12oiu"]
+atlas = ExtResource("1_c2lqw")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n23aa"]
+atlas = ExtResource("1_c2lqw")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u4g38"]
+atlas = ExtResource("1_c2lqw")
+region = Rect2(0, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yv4j8"]
+atlas = ExtResource("1_c2lqw")
+region = Rect2(32, 64, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_x3etv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bdhic")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pcjmm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_32qmr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vfmo2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_12oiu")
+}],
+"loop": true,
+"name": &"idle1",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n23aa")
+}],
+"loop": true,
+"name": &"idle2",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u4g38")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yv4j8")
+}],
+"loop": true,
+"name": &"talk",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_dolmc"]
+radius = 9.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_8hhb8"]
+radius = 17.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1xjpc"]
+content_margin_left = 1.0
+content_margin_top = 1.0
+content_margin_right = 1.0
+content_margin_bottom = 1.0
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(1, 1, 1, 1)
+border_blend = true
+corner_radius_top_left = 1
+corner_radius_top_right = 1
+corner_radius_bottom_right = 1
+corner_radius_bottom_left = 1
+expand_margin_left = 4.0
+expand_margin_top = 1.0
+expand_margin_right = 2.0
+expand_margin_bottom = 2.0
+anti_aliasing_size = 2.805
+
+[sub_resource type="Gradient" id="Gradient_dttec"]
+colors = PackedColorArray(0.423529, 1, 1, 1, 0.423529, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_jc25c"]
+gradient = SubResource("Gradient_dttec")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_6jcsm"]
+particle_flag_disable_z = true
+emission_shape = 1
+emission_sphere_radius = 25.45
+direction = Vector3(0, 0, 0)
+spread = 142.079
+initial_velocity_min = 56.18
+initial_velocity_max = 89.89
+gravity = Vector3(0, 0, 0)
+scale_min = 0.15
+scale_max = 0.3
+color = Color(0.423529, 1, 1, 1)
+color_ramp = SubResource("GradientTexture1D_jc25c")
+hue_variation_min = -0.13
+hue_variation_max = 0.03
+
+[node name="DentonCharacter" type="CharacterBody2D"]
+collision_layer = 64
+collision_mask = 164
+script = ExtResource("1_hlt1e")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_x3etv")
+animation = &"talk"
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, 5)
+shape = SubResource("CircleShape2D_dolmc")
+
+[node name="TalkArea" type="Area2D" parent="."]
+collision_layer = 32
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TalkArea"]
+position = Vector2(-1, 3)
+shape = SubResource("CircleShape2D_8hhb8")
+
+[node name="DialoguePopupCanvas" parent="." instance=ExtResource("3_2mtun")]
+
+[node name="DialogueLabel" type="Label" parent="DialoguePopupCanvas"]
+visible = false
+top_level = true
+z_index = 1
+offset_left = 37.0
+offset_top = 47.0
+offset_right = 845.0
+offset_bottom = 140.0
+theme_override_fonts/font = ExtResource("3_quuxm")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_1xjpc")
+text = "Denton:
+Let's get out of this room and I'll tell you some things I know about this place while we move."
+autowrap_mode = 2
+
+[node name="EToInteract" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(0, -22)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("4_0vpcy")
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+debug_enabled = true
+
+[node name="FlashParticles" type="GPUParticles2D" parent="."]
+emitting = false
+amount = 40
+process_material = SubResource("ParticleProcessMaterial_6jcsm")
+texture = ExtResource("6_iwysd")
+one_shot = true
+
+[connection signal="dialogue_finished" from="." to="." method="_on_dialogue_finished"]
+[connection signal="body_entered" from="TalkArea" to="." method="_on_talk_area_body_entered"]
+[connection signal="body_exited" from="TalkArea" to="." method="_on_talk_area_body_exited"]

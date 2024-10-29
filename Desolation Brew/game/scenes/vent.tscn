@@ -1,0 +1,46 @@
+[gd_scene load_steps=7 format=3 uid="uid://duwpgtd25451k"]
+
+[ext_resource type="Script" path="res://game/scripts/vent.gd" id="1_r37mg"]
+[ext_resource type="Texture2D" uid="uid://dx7ih7bpdloyd" path="res://assets/sprites/misc/white.png" id="1_s5ps5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dcg5r"]
+size = Vector2(54, 46)
+
+[sub_resource type="Gradient" id="Gradient_g5oxw"]
+colors = PackedColorArray(0.309804, 0.309804, 0.309804, 0.772549, 0.533333, 0.533333, 0.533333, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_ptum3"]
+gradient = SubResource("Gradient_g5oxw")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_c7751"]
+particle_flag_disable_z = true
+emission_shape = 1
+emission_sphere_radius = 24.45
+velocity_pivot = Vector3(50, 20, 0)
+direction = Vector3(50, 20, 0)
+spread = 133.988
+initial_velocity_max = 4.0
+orbit_velocity_min = -0.09
+orbit_velocity_max = -0.044
+gravity = Vector3(0, -120, 0)
+scale_max = 1.3
+color_ramp = SubResource("GradientTexture1D_ptum3")
+hue_variation_max = 0.01
+
+[node name="Vent" type="Area2D"]
+script = ExtResource("1_r37mg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-2, -1)
+shape = SubResource("RectangleShape2D_dcg5r")
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+z_index = 2
+amount = 100
+process_material = SubResource("ParticleProcessMaterial_c7751")
+texture = ExtResource("1_s5ps5")
+speed_scale = 0.8
+fixed_fps = 60
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

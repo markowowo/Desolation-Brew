@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://pfsurwhr8rmv"
+path="res://.godot/imported/ceiling-fan-72370.mp3-2cf2fd88f23e15d6305edba7c183f7c1.mp3str"
+
+[deps]
+
+source_file="res://assets/sound/sfx/misc sfx/ceiling-fan-72370.mp3"
+dest_files=["res://.godot/imported/ceiling-fan-72370.mp3-2cf2fd88f23e15d6305edba7c183f7c1.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,52 @@
+[gd_scene load_steps=5 format=3 uid="uid://b481foe7kso6n"]
+
+[ext_resource type="FontFile" uid="uid://bgfw6vk705sj5" path="res://assets/fonts/Teko-Regular.ttf" id="1_6bdww"]
+[ext_resource type="Script" path="res://game/scripts/demo_over_screen.gd" id="1_o8fqs"]
+[ext_resource type="PackedScene" uid="uid://dsy2woc2e8lax" path="res://game/asset scenes/settings_button.tscn" id="3_salor"]
+[ext_resource type="FontFile" uid="uid://dt3erijhpe63p" path="res://assets/fonts/AntonSC-Regular.ttf" id="4_iewot"]
+
+[node name="DemoOverScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_o8fqs")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 1164.0
+offset_bottom = 657.0
+color = Color(0.0605303, 0.0605303, 0.0605303, 1)
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 238.0
+offset_top = 49.0
+offset_right = 900.0
+offset_bottom = 336.0
+theme_override_fonts/font = ExtResource("1_6bdww")
+theme_override_font_sizes/font_size = 200
+text = "DEMO OVER"
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 0
+offset_left = 293.0
+offset_top = 284.0
+offset_right = 955.0
+offset_bottom = 571.0
+theme_override_fonts/font = ExtResource("1_6bdww")
+theme_override_font_sizes/font_size = 100
+text = "Thanks for playing!"
+
+[node name="CreditsButton" parent="." instance=ExtResource("3_salor")]
+layout_mode = 0
+offset_left = 385.0
+offset_top = 467.0
+offset_right = 753.0
+offset_bottom = 529.0
+theme_override_fonts/font = ExtResource("4_iewot")
+text = "Credits"
+
+[connection signal="pressed" from="CreditsButton" to="." method="_on_credits_button_pressed"]
